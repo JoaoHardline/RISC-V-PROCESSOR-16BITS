@@ -117,3 +117,19 @@ endmodule
 Os Registradores são circuitos sequenciais formados por Flip-Flops (FF) que, sob o ponto de vista de Organização de Computadores, compõem o nível mais alto da hierarquia de memória. São memórias voláteis (ou seja, seus dados são perdidos quando o circuito é desligado), normalmente compostos por FF Tipo-D ligados em paralelo. Sua função é bastante simples: armazenar um dado de N bits por certo período de tempo.
 Já o PC,  é utilizado para indicar, na memória, o endereço da próxima instrução a ser executada. A cada instrução executada, ele é atualizado para apontar para o endereço da próxima instrução a ser executada. 
 o PC pode ser implementado tanto como um registrador, acrescido de um circuito dedicado formado por um circuito somador (para incremento de 1) e por um multiplexador (para o desvio de fluxo), ou com um contador (síncrono ou assíncrono) com carga paralela. Para este projeto, vamos utilizar o formado por um contador com carga paralela.
+
+Abaixo está o código verilog do PC
+
+```
+	//PC Register
+	always @ (posedge clk or posedge reset)
+	begin
+		if (reset)
+			PC <= 0;
+		else
+			if (PCWrite) 
+				PC <= Result;
+	end
+```
+	
+
