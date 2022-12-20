@@ -21,7 +21,7 @@ always @(*)
            ALUResult = SrcA & SrcB;
           3'b011: //  Logical or
            ALUResult = SrcA | SrcB;
-          3'b101: // Greater comparison SLT
+          3'b101: // Greater comparison SLT (set if less than)
            ALUResult = (SrcA<SrcB)?8'b1:8'b0;
           default: ALUResult = SrcA + SrcB; 
         endcase
