@@ -132,4 +132,5 @@ Abaixo está o código verilog do PC
 	end
 ```
 	
+## 3ª Parte - Máquina de estado finitos 
 
